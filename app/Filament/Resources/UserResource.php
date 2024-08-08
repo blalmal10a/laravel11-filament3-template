@@ -41,6 +41,9 @@ class UserResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+            ->modifyQueryUsing(
+                fn($query) => $query->whereNot('name', 'superuser')
+            )
             ->columns([
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
