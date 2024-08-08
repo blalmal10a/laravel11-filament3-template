@@ -20,9 +20,15 @@ class DatabaseSeeder extends Seeder
             'email' => 'su@example.email',
             'password' => bcrypt('su@example.email')
         ]);
+        $admin = User::create([
+            'name' => 'Admin',
+            'email' => 'admin@example.email',
+            'password' => bcrypt('admin@example.email')
+        ]);
         $this->call([
             ShieldSeeder::class,
         ]);
         $su->assignRole('super_admin');
+        $admin->assignRole('admin');
     }
 }
