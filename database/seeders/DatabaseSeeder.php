@@ -20,6 +20,9 @@ class DatabaseSeeder extends Seeder
             'email' => 'su@example.email',
             'password' => bcrypt('su@example.email')
         ]);
+        $this->call([
+            ShieldSeeder::class,
+        ]);
         $su->assignRole('super_admin');
     }
 }
