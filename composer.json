@@ -12,7 +12,9 @@
         "bezhansalleh/filament-shield": "^3.2.6",
         "filament/filament": "^3.2",
         "laravel/framework": "^11.9",
-        "laravel/tinker": "^2.9"
+        "laravel/tinker": "^2.9",
+        "owen-it/laravel-auditing": "^13.6",
+        "tapp/filament-auditing": "^3.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",

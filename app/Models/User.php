@@ -13,12 +13,15 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
 
-class User extends Authenticatable implements FilamentUser
+use OwenIt\Auditing\Contracts\Auditable;
+
+class User extends Authenticatable implements FilamentUser, Auditable
 {
     use HasFactory, Notifiable;
     use HasRoles;
     use HasPanelShield;
     use SoftDeletes;
+    use \OwenIt\Auditing\Auditable;
 
     /**
      * The attributes that are mass assignable.
