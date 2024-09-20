@@ -16,7 +16,10 @@ return new class extends Migration
             $table->string('domain')->nullable();
             $table->string('path')->nullable();
             $table->string('full_path')->nullable();
+            $table->bigInteger('imageable_id')->nullable();
+            $table->string('imageable_type')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

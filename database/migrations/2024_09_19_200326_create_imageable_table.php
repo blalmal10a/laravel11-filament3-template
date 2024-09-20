@@ -16,9 +16,10 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(Image::class);
             $table->bigInteger('imageable_id');
-            $table->sstring('imageable_type');
+            $table->string('imageable_type');
             $table->string('path')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
