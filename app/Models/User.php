@@ -8,6 +8,7 @@ use BezhanSalleh\FilamentShield\Traits\HasPanelShield;
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Panel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -60,5 +61,14 @@ class User extends Authenticatable implements FilamentUser, Auditable
     public function canAccessPanel(Panel $panel): bool
     {
         return true;
+    }
+
+    // public function images(): MorphToMany
+    // {
+    //     return $this->morphToMany(Image::class, 'imageable', 'imageable');
+    // }
+    public function image()
+    {
+        return $this->morphOne(Image::class, 'imageable');
     }
 }
