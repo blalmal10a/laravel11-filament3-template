@@ -14,7 +14,9 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // User::factory(10)->create();
-
+        $this->call([
+            ShieldSeeder::class,
+        ]);
         $su = User::create([
             'name' => 'superuser',
             'email' => 'su@example.email',
@@ -25,9 +27,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@example.email',
             'password' => bcrypt('admin@example.email')
         ]);
-        $this->call([
-            ShieldSeeder::class,
-        ]);
+
         $su->assignRole('super_admin');
         $admin->assignRole('admin');
     }
