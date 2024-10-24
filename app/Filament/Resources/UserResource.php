@@ -54,7 +54,7 @@ class UserResource extends Resource
                             'name',
                             fn($query)
                             => $query
-                                ->whereNotIn('name', ['admin', 'super_admin'])
+                                ->whereNotIn('name', ['super_admin'])
                         )
 
                 ]),
