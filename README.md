@@ -18,7 +18,8 @@ php artisan storage:link
 If your database credentials are different from the default, update the database credentials in the .env file.
 
 ```
-php artisan migrate --seed
+php artisan migrate
+php artisan db:seed
 ```
 
 ```
@@ -39,3 +40,14 @@ Please review [our security policy](../../security/policy) on how to report secu
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+
+USE THE BELOW COMMANDS IF ALL SETTINGS ARE CORERCT
+```
+composer install
+cp .env.example .env
+php artisan key:generate
+php artisan storage:link
+php artisan migrate
+php artisan db:seed
+```
+
