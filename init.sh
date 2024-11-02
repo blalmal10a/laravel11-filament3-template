@@ -79,3 +79,15 @@ IMAGE_HOST=https://i.imgur.com
 EOL
 
 echo ".env file created successfully."
+
+composer install
+echo "Installation completed"
+php artisan migrate
+echo "Migration completed"
+php artisan storage:link
+php artisan key:generate
+php artisan db:seed
+
+echo "Seeding completed"
+
+php artisan serve
