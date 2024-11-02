@@ -7,17 +7,35 @@ Clone this project
 git clone https://github.com/blalmal10a/filament-template.git
 
 git remote remove origin
-
-composer install
-
-cp .env.example .env
-php artisan key:generate
-php artisan storage:link
 ``` 
 
-If your database credentials are different from the default, update the database credentials in the .env file.
-
+Generate .env file
 ```
+sh init.sh
+composer install
+
+php artisan key:generate
+php artisan storage:link
+php artisan migrate
+php artisan db:seed
+```
+For windows users
+```
+./winit.bat
+composer install
+
+php artisan key:generate
+php artisan storage:link
+php artisan migrate
+php artisan db:seed
+```
+
+Install dependencies
+```
+composer install
+
+php artisan key:generate
+php artisan storage:link
 php artisan migrate
 php artisan db:seed
 ```
