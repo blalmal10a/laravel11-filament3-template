@@ -91,7 +91,7 @@ for /f "tokens=*" %%a in ('echo %str%') do (
 ) > .env
 
 echo .env file created successfully.
-
+xcopy .env .env.example /I /Y
 composer install & php artisan migrate &php artisan storage:link & php artisan key:generate &php artisan db:seed &php artisan serve
 
 goto :eof
