@@ -1,8 +1,8 @@
 @echo off
 setlocal enabledelayedexpansion
 
-:: Prompt for the folder name
-set /p str="Enter Application name: "
+for %%I in (.) do set str=%%~nxI
+echo %str%
 
 set "snake="
 
@@ -92,17 +92,7 @@ for /f "tokens=*" %%a in ('echo %str%') do (
 
 echo .env file created successfully.
 
-composer install
-echo "Installation completed"
-php artisan migrate
-echo "Migration completed"
-php artisan storage:link
-php artisan key:generate
-php artisan db:seed
-
-echo "Seeding completed"
-
-php artisan serve
+composer install & php artisan migrate &php artisan storage:link & php artisan key:generate &php artisan db:seed &php artisan serve
 
 goto :eof
 :tolower
@@ -110,3 +100,14 @@ for %%a in ("A=a" "B=b" "C=c" "D=d" "E=e" "F=f" "G=g" "H=h" "I=i" "J=j" "K=k" "L
     set %1=!%1:%%~a!
 )
 goto :eof
+
+:LAST_FOLDER
+if "%1"=="" (
+    @echo %LAST%
+    goto :EOF
+)
+
+set LAST=%1
+SHIFT
+
+goto :LAST_FOLDER
