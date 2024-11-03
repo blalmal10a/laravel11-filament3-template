@@ -35,4 +35,7 @@ return [
         ],
     ],
 
+    'imgur' => [
+        'client_id' => env('IMGUR_CLIENT_ID'),
+    ],
 ];
