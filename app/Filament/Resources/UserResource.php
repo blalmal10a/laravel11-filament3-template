@@ -2,9 +2,11 @@
 
 namespace App\Filament\Resources;
 
+use App\Filament\Forms\Components\CustomFileUpload;
 use App\Filament\Resources\UserResource\Pages;
 use App\Models\User;
 use Filament\Forms\Components\CheckboxList;
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
@@ -34,6 +36,9 @@ class UserResource extends Resource
                     ->email()
                     ->required()
                     ->maxLength(255),
+                Section::make([
+                    CustomFileUpload::make('path')
+                ])->relationship('image'),
                 Toggle::make('update_password')
                     ->hiddenOn('create')
                     ->reactive()
