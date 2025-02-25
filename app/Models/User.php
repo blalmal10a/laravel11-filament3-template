@@ -16,13 +16,14 @@ use Spatie\Permission\Traits\HasRoles;
 
 use OwenIt\Auditing\Contracts\Auditable;
 
-class User extends Authenticatable implements FilamentUser, Auditable
+class User extends Authenticatable implements FilamentUser
+// Auditable
 {
     use HasFactory, Notifiable;
     use HasRoles;
     use HasPanelShield;
     use SoftDeletes;
-    use \OwenIt\Auditing\Auditable;
+    // use \OwenIt\Auditing\Auditable;
 
     /**
      * The attributes that are mass assignable.

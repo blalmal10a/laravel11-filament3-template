@@ -17,7 +17,7 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-use Tapp\FilamentAuditing\RelationManagers\AuditsRelationManager;
+// use Tapp\FilamentAuditing\RelationManagers\AuditsRelationManager;
 
 class UserResource extends Resource
 {
@@ -110,7 +110,7 @@ class UserResource extends Resource
     public static function getRelations(): array
     {
         return [
-            AuditsRelationManager::class,
+            // AuditsRelationManager::class,
         ];
     }
 
