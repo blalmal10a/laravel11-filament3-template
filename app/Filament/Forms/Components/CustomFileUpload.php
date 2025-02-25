@@ -86,6 +86,8 @@ class CustomFileUpload extends BaseFileUpload
      */
     protected array | Closure $imageEditorAspectRatios = [];
 
+    protected array | Closure $mimeTypeMap = [];
+
     // custom
     protected ?Closure $getUploadedFileUsing = null;
 
@@ -231,14 +233,18 @@ class CustomFileUpload extends BaseFileUpload
 
                 if (!$response->successful()) {
                     // Log the error response for debugging
-                    logger('Imgur API Error: ' . $response->body());
+                    logger('Imgur api success: ' . $response->body());
                     throw new \Exception('Failed to upload to Imgur: ' . $response->body());
+                } else {
+                    logger('Imgur API Error: ' . $response->body());
                 }
 
                 $data = $response->json();
 
                 // Return the Imgur URL as the stored file path
-                return $data['data']['link'];
+                $link =  $data['data']['link'];
+                logger($link);
+                return $link;
             } catch (\Exception $e) {
                 // Log the error and return null to indicate failure
                 Log::error('Imgur upload failed: ' . $e->getMessage());
@@ -445,7 +451,7 @@ class CustomFileUpload extends BaseFileUpload
         return $itemPanelAspectRatio;
     }
 
-    public function getLoadingIndicatorPosition(): string
+    public function getLoadingIndicatorPosition()
     {
         return $this->evaluate($this->loadingIndicatorPosition);
     }
@@ -460,17 +466,17 @@ class CustomFileUpload extends BaseFileUpload
         return $this->evaluate($this->panelLayout);
     }
 
-    public function getRemoveUploadedFileButtonPosition(): string
+    public function getRemoveUploadedFileButtonPosition()
     {
         return $this->evaluate($this->removeUploadedFileButtonPosition);
     }
 
-    public function getUploadButtonPosition(): string
+    public function getUploadButtonPosition()
     {
         return $this->evaluate($this->uploadButtonPosition);
     }
 
-    public function getUploadProgressIndicatorPosition(): string
+    public function getUploadProgressIndicatorPosition()
     {
         return $this->evaluate($this->uploadProgressIndicatorPosition);
     }
@@ -754,5 +760,20 @@ class CustomFileUpload extends BaseFileUpload
                 ],
             ],
         ];
+    }
+
+
+    // dah belh
+
+    public function getMimeTypeMap()
+    {
+        logger($this->mimeTypeMap);
+        return $this->evaluate($this->mimeTypeMap);
+    }
+
+    public function mimeTypeMap(array | Closure $map): static
+    {
+        $this->mimeTypeMap = $map;
+        return $this;
     }
 }
