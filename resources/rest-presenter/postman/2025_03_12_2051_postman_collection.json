@@ -1,0 +1,512 @@
+{
+    "info": {
+        "name": "Kawnek Template (RESTPresenter)",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "variable": [
+        {
+            "key": "base_url",
+            "value": "https:\/\/filament-template.test"
+        }
+    ],
+    "item": [
+        {
+            "name": "Resources",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "type": "text",
+                        "key": "Accept",
+                        "value": "application\/json"
+                    },
+                    {
+                        "type": "text",
+                        "key": "Content-Type",
+                        "value": "application\/json"
+                    },
+                    {
+                        "type": "text",
+                        "key": "X-REST-PRESENTER-API-KEY",
+                        "value": "rest-presenter-secret-key",
+                        "disabled": false
+                    }
+                ],
+                "url": {
+                    "raw": "{{base_url}}\/api\/v1\/resources",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "v1",
+                        "resources"
+                    ],
+                    "variable": []
+                }
+            }
+        },
+        {
+            "name": "Users",
+            "item": [
+                {
+                    "name": "api\/v1\/users",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "type": "text",
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "type": "text",
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "type": "text",
+                                "key": "X-REST-PRESENTER-API-KEY",
+                                "value": "rest-presenter-secret-key",
+                                "disabled": false
+                            },
+                            {
+                                "type": "text",
+                                "key": "X-REST-PRESENTER",
+                                "value": "user",
+                                "disabled": true
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}\/api\/v1\/users",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "v1",
+                                "users"
+                            ],
+                            "variable": []
+                        }
+                    }
+                },
+                {
+                    "name": "api\/v1\/users\/:user",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "type": "text",
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "type": "text",
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "type": "text",
+                                "key": "X-REST-PRESENTER-API-KEY",
+                                "value": "rest-presenter-secret-key",
+                                "disabled": false
+                            },
+                            {
+                                "type": "text",
+                                "key": "X-REST-PRESENTER",
+                                "value": "user",
+                                "disabled": true
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}\/api\/v1\/users\/:user",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "v1",
+                                "users",
+                                ":user"
+                            ],
+                            "variable": []
+                        }
+                    }
+                },
+                {
+                    "name": "api\/v1\/filament\/users",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "type": "text",
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "type": "text",
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "type": "text",
+                                "key": "X-REST-PRESENTER-API-KEY",
+                                "value": "rest-presenter-secret-key",
+                                "disabled": false
+                            },
+                            {
+                                "type": "text",
+                                "key": "X-REST-PRESENTER",
+                                "value": "user",
+                                "disabled": true
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}\/api\/v1\/filament\/users",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "v1",
+                                "filament",
+                                "users"
+                            ],
+                            "variable": []
+                        }
+                    }
+                },
+                {
+                    "name": "api\/v1\/filament\/users\/:user",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "type": "text",
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "type": "text",
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "type": "text",
+                                "key": "X-REST-PRESENTER-API-KEY",
+                                "value": "rest-presenter-secret-key",
+                                "disabled": false
+                            },
+                            {
+                                "type": "text",
+                                "key": "X-REST-PRESENTER",
+                                "value": "user",
+                                "disabled": true
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}\/api\/v1\/filament\/users\/:user",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "v1",
+                                "filament",
+                                "users",
+                                ":user"
+                            ],
+                            "variable": []
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Roles",
+            "item": [
+                {
+                    "name": "api\/v1\/filament\/roles",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "type": "text",
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "type": "text",
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "type": "text",
+                                "key": "X-REST-PRESENTER-API-KEY",
+                                "value": "rest-presenter-secret-key",
+                                "disabled": false
+                            },
+                            {
+                                "type": "text",
+                                "key": "X-REST-PRESENTER",
+                                "value": "role",
+                                "disabled": true
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}\/api\/v1\/filament\/roles",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "v1",
+                                "filament",
+                                "roles"
+                            ],
+                            "variable": []
+                        }
+                    }
+                },
+                {
+                    "name": "api\/v1\/filament\/roles\/:role",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "type": "text",
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "type": "text",
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "type": "text",
+                                "key": "X-REST-PRESENTER-API-KEY",
+                                "value": "rest-presenter-secret-key",
+                                "disabled": false
+                            },
+                            {
+                                "type": "text",
+                                "key": "X-REST-PRESENTER",
+                                "value": "role",
+                                "disabled": true
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}\/api\/v1\/filament\/roles\/:role",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "v1",
+                                "filament",
+                                "roles",
+                                ":role"
+                            ],
+                            "variable": []
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Register",
+            "item": [
+                {
+                    "name": "api\/v1\/sanctum\/register",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "type": "text",
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "type": "text",
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "type": "text",
+                                "key": "X-REST-PRESENTER-API-KEY",
+                                "value": "rest-presenter-secret-key",
+                                "disabled": false
+                            },
+                            {
+                                "type": "text",
+                                "key": "X-REST-PRESENTER",
+                                "value": "register",
+                                "disabled": true
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}\/api\/v1\/sanctum\/register",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "v1",
+                                "sanctum",
+                                "register"
+                            ],
+                            "variable": []
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Login",
+            "item": [
+                {
+                    "name": "api\/v1\/sanctum\/login",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "type": "text",
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "type": "text",
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "type": "text",
+                                "key": "X-REST-PRESENTER-API-KEY",
+                                "value": "rest-presenter-secret-key",
+                                "disabled": false
+                            },
+                            {
+                                "type": "text",
+                                "key": "X-REST-PRESENTER",
+                                "value": "login",
+                                "disabled": true
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}\/api\/v1\/sanctum\/login",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "v1",
+                                "sanctum",
+                                "login"
+                            ],
+                            "variable": []
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Logout",
+            "item": [
+                {
+                    "name": "api\/v1\/sanctum\/logout",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "type": "text",
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "type": "text",
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "type": "text",
+                                "key": "X-REST-PRESENTER-API-KEY",
+                                "value": "rest-presenter-secret-key",
+                                "disabled": false
+                            },
+                            {
+                                "type": "text",
+                                "key": "X-REST-PRESENTER",
+                                "value": "logout",
+                                "disabled": true
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}\/api\/v1\/sanctum\/logout",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "v1",
+                                "sanctum",
+                                "logout"
+                            ],
+                            "variable": []
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Reset-password",
+            "item": [
+                {
+                    "name": "api\/v1\/sanctum\/reset-password",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "type": "text",
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "type": "text",
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "type": "text",
+                                "key": "X-REST-PRESENTER-API-KEY",
+                                "value": "rest-presenter-secret-key",
+                                "disabled": false
+                            },
+                            {
+                                "type": "text",
+                                "key": "X-REST-PRESENTER",
+                                "value": "reset-password",
+                                "disabled": true
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}\/api\/v1\/sanctum\/reset-password",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "v1",
+                                "sanctum",
+                                "reset-password"
+                            ],
+                            "variable": []
+                        }
+                    }
+                }
+            ]
+        }
+    ],
+    "event": []
+}
